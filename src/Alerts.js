@@ -8,15 +8,25 @@ class Alerts extends Component {
   constructor () {
     super()
     this.state = {
-      rss_feed: 'https://us-central1-rssproxy-192114.cloudfunctions.net/rssGET2',
-      alerts: null
+      rssFeed: 'https://us-central1-rssproxy-192114.cloudfunctions.net/rssGET2',
+      alerts: null,
+      lastFetched: null,
+      intervalId: null,
+      timeSinceFetched: null
     }
+
+    // bind addtional functions
+    this.timer = this.timer.bind(this);
   }
   
   componentDidMount() {
+    var intervalId = setInterval(this.timer, 60000); // 1 minute
+    // store intervalId in the state so it can be accessed later:
+    this.setState({intervalId: intervalId});
+
     var parser = require('rss-parser');
     let self = this;
-    parser.parseURL(this.state.rss_feed, function(err, parsed) {
+    parser.parseURL(this.state.rssFeed, function(err, parsed) {
       let alerts = []; 
       let count = 0;
       parsed.feed.entries.forEach( function(alert) { 
@@ -26,7 +36,14 @@ class Alerts extends Component {
       });
 
       self.setState({alerts: alerts});
+      self.setState({lastFetched: Date.now()});
+      self.setState({timeSinceFetched: moment(Date.now()).fromNow()});
     });
+  }
+
+  componentWillUnmount() {
+      // use intervalId from the state to clear the interval
+      clearInterval(this.state.intervalId);
   }
 
   render() {
@@ -34,9 +51,13 @@ class Alerts extends Component {
     if (this.state.alerts) {
       return(
         <div id='alerts'>
-          <p style={{'fontWeight': 'bold'}}>{ this.state.alerts.length } Alerts</p>
+          <p style={{'fontWeight': 'bold'}}>
+            { this.state.alerts.length } Alerts [{ this.state.timeSinceFetched }]
+            </p>
           <ul>
             {this.state.alerts.map(function(a, i){
+
+              // TODO: extract this to a function (decorator?)
               let itemArray = [];
               itemArray = a.split(' - ');
 
@@ -47,8 +68,8 @@ class Alerts extends Component {
               if (affecting === 'System Wide Alert') {
                 alertType += ' swa';
               } else {
-                alertType += ' line'
-;              }
+                alertType += ' line';              
+              }
 
               return (
                 <li key={ i } className={alertType}>
@@ -67,6 +88,10 @@ class Alerts extends Component {
     return <div>Loading...</div>;
   }
 
+  timer() {
+    let timeSinceFetched = moment(this.state.lastFetched).fromNow();
+    this.setState({ timeSinceFetched: timeSinceFetched });
+  }
 }
 
 export default Alerts;
