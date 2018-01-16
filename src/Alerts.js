@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import './App.css';
+import moment from 'moment';
 
 class Alerts extends Component {
   constructor () {
@@ -42,7 +43,7 @@ class Alerts extends Component {
               let tailArray = itemArray[1].split('- Affecting:');
               let affecting = tailArray[1].trim();
               let alertType = 'alert';
-              
+
               if (affecting === 'System Wide Alert') {
                 alertType += ' swa';
               } else {
@@ -51,7 +52,7 @@ class Alerts extends Component {
 
               return (
                 <li key={ i } className={alertType}>
-                  <div className={'header'}>{ affecting } - { itemArray[0] }</div>
+                  <div className={'header'}>{ affecting } - { moment(itemArray[0]).fromNow() }</div>
                   <div className={'description'}>{ tailArray[0] }</div>
                 </li>
               )
