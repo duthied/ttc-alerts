@@ -29,6 +29,7 @@
 #alerts ul {
   padding: 0;
   margin: 15px;
+  list-style-type: none;
 }
 
 #alerts li.alert {
