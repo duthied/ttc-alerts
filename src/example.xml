@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<rdf:RDF 
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns="http://purl.org/rss/1.0/">
+  <channel rdf:about="http://www.ttc.ca/Service_Advisories/index.jsp">
+    <title>TTC Service Alerts</title>
+    <link>http://www.ttc.ca/Service_Advisories/index.jsp</link>
+    <description>     TTC Service Alerts.   </description>
+    <image rdf:resource="http://www.ttc.ca/images/ttc-main-logo.gif" />
+    <items>
+      <rdf:Seq>
+        <rdf:li rdf:resource="http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#System+Wide" />
+        <rdf:li rdf:resource="http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#System+Wide+(2)" />
+        <rdf:li rdf:resource="http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#System+Wide+(3)" />
+        <rdf:li rdf:resource="http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#System+Wide+(4)" />
+        <rdf:li rdf:resource="http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#System+Wide+(5)" />
+      </rdf:Seq>
+    </items>
+  </channel>
+  <image rdf:about="http://www.ttc.ca/images/ttc-main-logo.gif">
+    <title>TTC.ca</title>
+    <link>http://www.ttc.ca</link>
+    <url>http://www.ttc.ca/images/ttc-main-logo.gif</url>
+  </image>
+  <item rdf:about="http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#System+Wide">
+    <title>System Wide</title>
+    <link>http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#System+Wide</link>
+    <description>
+Update: Elevator Alert: Finch Station, subway platform to collector level and mezzanine level to bus level, and concourse to street level, out of service.
+- Affecting: System Wide Alert</description>
+    <dc:date>2018-01-14T10:56:38.877-05:00</dc:date>
+  </item>
+  <item rdf:about="http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#System+Wide+(2)">
+    <title>System Wide (2)</title>
+    <link>http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#System+Wide+(2)</link>
+    <description>
+Elevator Alert: Bayview Station, subway platform to concourse, out of service.
+- Affecting: System Wide Alert</description>
+    <dc:date>2018-01-13T18:33:36.807-05:00</dc:date>
+  </item>
+  <item rdf:about="http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#System+Wide+(3)">
+    <title>System Wide (3)</title>
+    <link>http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#System+Wide+(3)</link>
+    <description>
+Elevator Alert: St Clair West Station, street level to bus/streetcar platform, out of service.
+- Affecting: System Wide Alert</description>
+    <dc:date>2018-01-08T14:53:17.153-05:00</dc:date>
+  </item>
+  <item rdf:about="http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#System+Wide+(4)">
+    <title>System Wide (4)</title>
+    <link>http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#System+Wide+(4)</link>
+    <description>
+Elevator Alert: Kipling Station, Collector level to street and bus platform, out of service
+- Affecting: System Wide Alert</description>
+    <dc:date>2018-01-07T00:50:22.300-05:00</dc:date>
+  </item>
+  <item rdf:about="http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#System+Wide+(5)">
+    <title>System Wide (5)</title>
+    <link>http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#System+Wide+(5)</link>
+    <description>
+Elevator Alert: Kennedy Station, subway platform to concourse level, out of service until end of January due to construction.
+- Affecting: System Wide Alert</description>
+    <dc:date>2018-01-07T00:49:44.790-05:00</dc:date>
+  </item>
+</rdf:RDF>
