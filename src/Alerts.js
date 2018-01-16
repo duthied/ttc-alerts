@@ -30,8 +30,7 @@ class Alerts extends Component {
       let alerts = []; 
       let count = 0;
       parsed.feed.entries.forEach( function(alert) { 
-        let alertDate = new Date(Date.parse(alert.date));
-        alerts[count] = alertDate.toLocaleDateString() + ' ' + alertDate.toLocaleTimeString() + ' - ' + alert.content;
+        alerts[count] = moment(alert.date).fromNow() + ' - ' + alert.content;
         count++;
       });
 
@@ -64,6 +63,7 @@ class Alerts extends Component {
               let tailArray = itemArray[1].split('- Affecting:');
               let affecting = tailArray[1].trim();
               let alertType = 'alert';
+              let itemDate = itemArray[0];
 
               if (affecting === 'System Wide Alert') {
                 alertType += ' swa';
@@ -71,12 +71,9 @@ class Alerts extends Component {
                 alertType += ' line';              
               }
 
-              // hack to fix moment.js on iOS
-              moment.now = function() { return moment(Date.now()); }
-
               return (
                 <li key={ i } className={alertType}>
-                  <div className={'header'}>{ affecting } - { moment(itemArray[0]).fromNow() }</div>
+                  <div className={'header'}>{ affecting } - { itemDate }</div>
                   <div className={'description'}>{ tailArray[0] }</div>
                 </li>
               )
