@@ -71,6 +71,9 @@ class Alerts extends Component {
                 alertType += ' line';              
               }
 
+              // hack to fix moment.js on iOS
+              moment.now = function() { return moment(Date.now()); }
+
               return (
                 <li key={ i } className={alertType}>
                   <div className={'header'}>{ affecting } - { moment(itemArray[0]).fromNow() }</div>
