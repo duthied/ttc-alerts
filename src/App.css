@@ -28,16 +28,22 @@ div#loading {
   height: 200px;
   width: 200px;
 }
+
 .alert-header {
   color: lightgray;
   padding: 5px 5px 5px 25px;
   background-color: #222;
 }
 
-span.updatedAt {
+div.updatedAt {
   float: right;
   font-size: 9pt;
   font-style: italic;
+  margin: 10px 15px 10px 0;
+}
+
+#update {
+  margin: 10px 15px 10px 0;
 }
 
 .alert-footer {
