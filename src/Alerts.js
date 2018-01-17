@@ -7,7 +7,7 @@ import moment from 'moment';
 function AlertHeader(props) {
   return (
     <div className='alert-header' style={{'fontWeight': 'bold'}}>
-      { props.alertCount } Alerts <span>[from { props.updatedAt }]</span>
+      { props.alertCount } Alerts <span className='updatedAt'>{ props.updatedAt }</span>
     </div>
   )
 }

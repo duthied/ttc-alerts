@@ -28,6 +28,12 @@
   background-color: #222;
 }
 
+span.updatedAt {
+  float: right;
+  font-size: 9pt;
+  font-style: italic;
+}
+
 .alert-footer {
   color: gray;
   margin-left: 10px;
