@@ -4,6 +4,16 @@ import React, { Component } from 'react';
 import './App.css';
 import moment from 'moment';
 
+function AlertItem(props) {
+  return (
+
+      <li key={ props.i } className={ props.alertType }>
+        <div className={'header'}>{ props.affecting } - { props.itemDate }</div>
+        <div className={'description'}>{ props.description }</div>
+      </li>
+
+  );
+}
 class Alerts extends Component {
   constructor () {
     super()
@@ -56,7 +66,6 @@ class Alerts extends Component {
           <ul>
             {this.state.alerts.map(function(a, i){
 
-              // TODO: extract this to a function (decorator?)
               let itemArray = [];
               itemArray = a.split(' - ');
 
@@ -72,10 +81,13 @@ class Alerts extends Component {
               }
 
               return (
-                <li key={ i } className={alertType}>
-                  <div className={'header'}>{ affecting } - { itemDate }</div>
-                  <div className={'description'}>{ tailArray[0] }</div>
-                </li>
+                <AlertItem
+                  key={ i }
+                  alertType={ alertType }
+                  affecting={ affecting }
+                  itemDate={ itemDate }
+                  description={ tailArray[0] } 
+                  />
               )
               
             })}
