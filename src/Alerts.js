@@ -5,19 +5,21 @@ import './App.css';
 import moment from 'moment';
 
 function AlertHeader(props) {
+
   return (
     <div className='alert-header' style={{'fontWeight': 'bold'}}>
       { props.alertCount } Alerts <span className='updatedAt'>{ props.updatedAt }</span>
     </div>
   )
+
 }
 
 function ItemHeader(props) {
   var headerClass = 'header';
-  var targetLines = ['501', '504', '514', 'Yonge-University-Spadina'];
+  var lines = ['501', '504', '514', 'Yonge-University-Spadina', 'Bloor-Danforth'];
 
-  for (let targetLine of targetLines) {
-    if (props.affecting.indexOf(targetLine) !== -1) {
+  for (let line of lines) {
+    if (props.affecting.indexOf(line) !== -1) {
       headerClass += '-red';
       break;
     }
@@ -50,7 +52,6 @@ function AlertItem(props) {
   }
 
   return (
-
       <li className={ alertType }>
 
         <ItemHeader
@@ -59,7 +60,6 @@ function AlertItem(props) {
 
         <div className={'description'}>{ description }</div>
       </li>
-
   );
 }
 
@@ -141,7 +141,11 @@ class Alerts extends Component {
       )
     }
 
-    return <div>Loading...</div>;
+    return (
+      <div id='loading'>
+        <img src="ripple.gif" alt='loading gif'/>
+      </div>
+    )
   }
 
   timer() {

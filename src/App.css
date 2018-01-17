@@ -22,9 +22,15 @@
   font-size: large;
 }
 
+div#loading {
+  margin:0 auto;
+  padding-top: 150px;
+  height: 200px;
+  width: 200px;
+}
 .alert-header {
   color: lightgray;
-  padding: 5px 5px 5px 20px;
+  padding: 5px 5px 5px 25px;
   background-color: #222;
 }
 
@@ -36,7 +42,8 @@ span.updatedAt {
 
 .alert-footer {
   color: gray;
-  margin-left: 10px;
+  margin: 10px;
+  padding-top: 5px;
 }
 
 #alerts ul {
