@@ -4,8 +4,12 @@ import React, { Component } from 'react';
 import './App.css';
 import moment from 'moment';
 
-function formatItemDate(value) {
-  return moment(value).fromNow();
+function AlertHeader(props) {
+  return (
+    <p style={{'fontWeight': 'bold'}}>
+      { props.alertCount } Alerts [{ props.updatedAt }]
+    </p>
+  )
 }
 
 function ItemHeader(props) {
@@ -58,6 +62,11 @@ function AlertItem(props) {
 
   );
 }
+
+function formatItemDate(value) {
+  return moment(value).fromNow();
+}
+
 class Alerts extends Component {
   constructor () {
     super()
@@ -109,9 +118,11 @@ class Alerts extends Component {
     if (this.state.alerts) {
       return(
         <div id='alerts'>
-          <p style={{'fontWeight': 'bold'}}>
-            { this.state.alerts.length } Alerts [{ this.state.timeSinceFetched }]
-            </p>
+          
+          <AlertHeader
+            alertCount={ this.state.alerts.length }
+            updatedAt={ this.state.timeSinceFetched } />
+
           <ul>
             {this.state.alerts.map(function(a, i){
 
