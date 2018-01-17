@@ -34,6 +34,7 @@
 
 #alerts li.alert {
   margin: 10px;
+  border-bottom: 2px solid lightgray;
 }
 
 #alerts li.line {
@@ -42,7 +43,7 @@
 
 #alerts div.header {
   color: #848484;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
   font-weight: normal;
 }
 

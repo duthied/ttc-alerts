@@ -10,7 +10,7 @@ function AlertItem(props) {
 
   itemArray = props.itemContent.split(' - ');
   if (itemArray.length === 2) {
-    itemDate = itemArray[0];
+    itemDate = moment(itemArray[0]).fromNow();
     tailArray = itemArray[1].split('- Affecting:');
     
     if (tailArray.length === 2) {
@@ -55,12 +55,12 @@ class Alerts extends Component {
 
     var parser = require('rss-parser');
     let self = this;
-    
+
     parser.parseURL(this.state.rssFeed, function(err, parsed) {
       let alerts = []; 
       let count = 0;
       parsed.feed.entries.forEach( function(alert) { 
-        alerts[count] = moment(alert.date).fromNow() + ' - ' + alert.content;
+        alerts[count] = alert.date + ' - ' + alert.content;
         count++;
       });
 
