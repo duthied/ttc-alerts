@@ -41,11 +41,17 @@
   font-weight: bold;
 }
 
+div.header-red {
+  color: #ee0505;
+}
+
 #alerts div.header {
   color: #848484;
   padding-bottom: 10px;
   font-weight: normal;
 }
+
+
 
 #alerts div.description {
   font-size: 14pt;

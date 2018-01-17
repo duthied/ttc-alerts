@@ -4,13 +4,33 @@ import React, { Component } from 'react';
 import './App.css';
 import moment from 'moment';
 
+function formatItemDate(value) {
+  return moment(value).fromNow();
+}
+
+function ItemHeader(props) {
+  var headerClass = 'header';
+  var targetLines = ['501', '504', '514'];
+
+  for (let targetLine of targetLines) {
+    if (props.affecting.indexOf(targetLine) !== -1) {
+      headerClass += '-red';
+      break;
+    }
+  }
+
+  return (
+    <div className={ headerClass }>{ props.affecting } - { props.itemDate }</div>
+  )
+}
+
 function AlertItem(props) {
   let itemArray = [], tailArray = [];
   let itemDate = '', description = 'RSS feed content fail', affecting = '', alertType = 'alert';
 
   itemArray = props.itemContent.split(' - ');
   if (itemArray.length === 2) {
-    itemDate = moment(itemArray[0]).fromNow();
+    itemDate = formatItemDate(itemArray[0]);
     tailArray = itemArray[1].split('- Affecting:');
     
     if (tailArray.length === 2) {
@@ -24,10 +44,15 @@ function AlertItem(props) {
       }
     }
   }
+
   return (
 
       <li key={ props.key } className={ alertType }>
-        <div className={'header'}>{ affecting } - { itemDate }</div>
+
+        <ItemHeader
+          affecting={ affecting }
+          itemDate={ itemDate } />
+
         <div className={'description'}>{ description }</div>
       </li>
 
@@ -57,6 +82,10 @@ class Alerts extends Component {
     let self = this;
 
     parser.parseURL(this.state.rssFeed, function(err, parsed) {
+      if (err) {
+        return;
+      }
+
       let alerts = []; 
       let count = 0;
       parsed.feed.entries.forEach( function(alert) { 
