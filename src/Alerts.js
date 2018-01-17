@@ -5,11 +5,30 @@ import './App.css';
 import moment from 'moment';
 
 function AlertItem(props) {
+  let itemArray = [], tailArray = [];
+  let itemDate = '', description = 'RSS feed content fail', affecting = '', alertType = 'alert';
+
+  itemArray = props.itemContent.split(' - ');
+  if (itemArray.length === 2) {
+    itemDate = itemArray[0];
+    tailArray = itemArray[1].split('- Affecting:');
+    
+    if (tailArray.length === 2) {
+      description = tailArray[0].trim();
+      affecting = tailArray[1].trim();
+
+      if (affecting === 'System Wide Alert') {
+        alertType += ' swa';
+      } else {
+        alertType += ' line';              
+      }
+    }
+  }
   return (
 
-      <li key={ props.i } className={ props.alertType }>
-        <div className={'header'}>{ props.affecting } - { props.itemDate }</div>
-        <div className={'description'}>{ props.description }</div>
+      <li key={ props.key } className={ alertType }>
+        <div className={'header'}>{ affecting } - { itemDate }</div>
+        <div className={'description'}>{ description }</div>
       </li>
 
   );
@@ -66,34 +85,10 @@ class Alerts extends Component {
           <ul>
             {this.state.alerts.map(function(a, i){
 
-              let itemArray = [], tailArray = [];
-              let itemDate = '', description = 'RSS feed content fail', affecting = '', alertType = 'alert';
-
-              itemArray = a.split(' - ');
-              if (itemArray.length === 2) {
-                itemDate = itemArray[0];
-                tailArray = itemArray[1].split('- Affecting:');
-                
-                if (tailArray.length === 2) {
-                  description = tailArray[0].trim();
-                  affecting = tailArray[1].trim();
-
-                  if (affecting === 'System Wide Alert') {
-                    alertType += ' swa';
-                  } else {
-                    alertType += ' line';              
-                  }
-                }
-              }
-
               return (
                 <AlertItem
                   key={ i }
-                  alertType={ alertType }
-                  affecting={ affecting }
-                  itemDate={ itemDate }
-                  description={ description } 
-                  />
+                  itemContent={ a } />
               )
               
             })}
