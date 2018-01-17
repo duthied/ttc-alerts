@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<rdf:RDF 
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns="http://purl.org/rss/1.0/">
+ 
+
+
+
+
+
+
+
+
+
+
+ <channel rdf:about="http://www.ttc.ca/Service_Advisories/index.jsp">
+   <title>TTC Service Alerts</title>
+   <link>http://www.ttc.ca/Service_Advisories/index.jsp</link>
+   <description>
+     TTC Service Alerts.
+   </description>
+   <image rdf:resource="http://www.ttc.ca/images/ttc-main-logo.gif" />
+   <items>
+     <rdf:Seq>
+<rdf:li rdf:resource="http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#Service+Advisory" />
+<rdf:li rdf:resource="http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#Service+Advisory+(2)" />
+<rdf:li rdf:resource="http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#System+Wide" />
+<rdf:li rdf:resource="http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#Service+Advisory+(3)" />
+<rdf:li rdf:resource="http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#System+Wide+(2)" />
+<rdf:li rdf:resource="http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#System+Wide+(3)" />
+<rdf:li rdf:resource="http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#System+Wide+(4)" />
+<rdf:li rdf:resource="http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#Service+Advisory+(4)" />
+<rdf:li rdf:resource="http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#System+Wide+(5)" />
+<rdf:li rdf:resource="http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#System+Wide+(6)" />
+
+     </rdf:Seq>
+   </items>
+ </channel>
+ 
+ <image rdf:about="http://www.ttc.ca/images/ttc-main-logo.gif">
+   <title>TTC.ca</title>
+   <link>http://www.ttc.ca</link>
+   <url>http://www.ttc.ca/images/ttc-main-logo.gif</url>
+ </image>
+ 
+<item rdf:about="http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#Service+Advisory">
+<title>Service Advisory</title>
+<link>http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#Service+Advisory</link>
+<description>
+UPDATE: Alternate routing for delay on Line 1, customers can board streetcars on Yonge St or use 6 Bay bus to continue travel.
+- Affecting: Subway/RT Lines: Yonge-University-Spadina</description>
+<dc:date>2018-01-16T13:08:59.100-05:00</dc:date></item>
+<item rdf:about="http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#Service+Advisory+(2)">
+<title>Service Advisory (2)</title>
+<link>http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#Service+Advisory+(2)</link>
+<description>
+UPDATE: Customers may use GO Transit at Bloor and Union Stations (including the UP Express).PRESTO customers are not required to tap.
+- Affecting: Subway/RT Lines: Yonge-University-Spadina</description>
+<dc:date>2018-01-16T13:00:24.857-05:00</dc:date></item>
+<item rdf:about="http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#System+Wide">
+<title>System Wide</title>
+<link>http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#System+Wide</link>
+<description>
+Service suspended on Line 1, between Spadina and Union Stations due to a Toronto Fire Investigation at Queen&apos;s Park Station. 
+- Affecting: Subway/RT Lines: Yonge-University-Spadina:Vaughan Metropolitan Centre, Highway 407, Pioneer Village, York University, Finch West, Downsview Park, Sheppard West, Wilson, Yorkdale, Lawrence West, Glencairn, Eglinton West, St. Clair West, Dupont, King, Queen, Dundas, College, Wellesley, Bloor-Yonge, Rosedale, Summerhill, St. Clair, Davisville, Eglinton, Lawrence, York mills, Sheppard-Yonge, North York Centre, Finch</description>
+<dc:date>2018-01-16T12:37:35.683-05:00</dc:date></item>
+<item rdf:about="http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#Service+Advisory+(3)">
+<title>Service Advisory (3)</title>
+<link>http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#Service+Advisory+(3)</link>
+<description>
+5 Avenue Road diverting both ways via Queen&apos;s Park Circle due to a Fire Investigation at University and College. 
+- Affecting: Bus Routes: 5 Avenue Rd</description>
+<dc:date>2018-01-16T12:16:51.293-05:00</dc:date></item>
+<item rdf:about="http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#System+Wide+(2)">
+<title>System Wide (2)</title>
+<link>http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#System+Wide+(2)</link>
+<description>
+ELEVATOR ALERT: Woodbine Station, street to concourse to EB platform, out of service.
+- Affecting: System Wide Alert</description>
+<dc:date>2018-01-16T09:26:23.720-05:00</dc:date></item>
+<item rdf:about="http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#System+Wide+(3)">
+<title>System Wide (3)</title>
+<link>http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#System+Wide+(3)</link>
+<description>
+ELEVATOR ALERT: Broadview Station, EB platform to concourse level, out of service.
+- Affecting: System Wide Alert</description>
+<dc:date>2018-01-16T07:45:10.020-05:00</dc:date></item>
+<item rdf:about="http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#System+Wide+(4)">
+<title>System Wide (4)</title>
+<link>http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#System+Wide+(4)</link>
+<description>
+Elevator Alert: Queen&apos;s Quay, streetcar level to street level, out of service. 
+- Affecting: System Wide Alert</description>
+<dc:date>2018-01-15T10:54:24.687-05:00</dc:date></item>
+<item rdf:about="http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#Service+Advisory+(4)">
+<title>Service Advisory (4)</title>
+<link>http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#Service+Advisory+(4)</link>
+<description>
+Kennedy Station: North entrance &amp; connected pedestrian tunnel will be permanently closed &amp; demolished due to Eglinton Crosstown Project.
+- Affecting: Subway/RT Lines: Bloor-Danforth</description>
+<dc:date>2018-01-15T06:27:40.053-05:00</dc:date></item>
+<item rdf:about="http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#System+Wide+(5)">
+<title>System Wide (5)</title>
+<link>http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#System+Wide+(5)</link>
+<description>
+Elevator Alert: Kipling Station, Collector level to street and bus platform, out of service
+- Affecting: System Wide Alert</description>
+<dc:date>2018-01-07T00:50:22.300-05:00</dc:date></item>
+<item rdf:about="http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#System+Wide+(6)">
+<title>System Wide (6)</title>
+<link>http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp#System+Wide+(6)</link>
+<description>
+Elevator Alert: Kennedy Station, subway platform to concourse level, out of service until end of January due to construction.
+- Affecting: System Wide Alert</description>
+<dc:date>2018-01-07T00:49:44.790-05:00</dc:date></item>
+
+ 
+</rdf:RDF>
