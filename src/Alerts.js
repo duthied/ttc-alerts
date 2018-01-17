@@ -55,6 +55,7 @@ class Alerts extends Component {
 
     var parser = require('rss-parser');
     let self = this;
+    
     parser.parseURL(this.state.rssFeed, function(err, parsed) {
       let alerts = []; 
       let count = 0;
