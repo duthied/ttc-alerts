@@ -14,7 +14,7 @@ function AlertHeader(props) {
 
 function ItemHeader(props) {
   var headerClass = 'header';
-  var targetLines = ['501', '504', '514'];
+  var targetLines = ['501', '504', '514', 'Line 1', 'Line 2'];
 
   for (let targetLine of targetLines) {
     if (props.affecting.indexOf(targetLine) !== -1) {
