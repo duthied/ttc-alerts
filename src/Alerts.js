@@ -6,9 +6,9 @@ import moment from 'moment';
 
 function AlertHeader(props) {
   return (
-    <p style={{'fontWeight': 'bold'}}>
-      { props.alertCount } Alerts [{ props.updatedAt }]
-    </p>
+    <div className='alert-header' style={{'fontWeight': 'bold'}}>
+      { props.alertCount } Alerts <span>[from { props.updatedAt }]</span>
+    </div>
   )
 }
 
@@ -51,7 +51,7 @@ function AlertItem(props) {
 
   return (
 
-      <li key={ props.key } className={ alertType }>
+      <li className={ alertType }>
 
         <ItemHeader
           affecting={ affecting }
@@ -134,7 +134,9 @@ class Alerts extends Component {
               
             })}
           </ul>
-          <a href="http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp">TTC Service Alerts Site</a>
+          <div className='alert-footer'>
+            <a href="http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp">TTC Service Alerts Site</a>
+          </div>
         </div>
       )
     }

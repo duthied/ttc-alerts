@@ -22,11 +22,19 @@
   font-size: large;
 }
 
-#alerts {
-  margin: 10px;
+.alert-header {
+  color: lightgray;
+  padding: 5px 5px 5px 20px;
+  background-color: #222;
+}
+
+.alert-footer {
+  color: gray;
+  margin-left: 10px;
 }
 
 #alerts ul {
+  margin: 10px;
   padding: 0;
   margin: 15px;
   list-style-type: none;
