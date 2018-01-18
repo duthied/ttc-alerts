@@ -9,10 +9,6 @@ cloud function
  * @param {Object} res Cloud Function response context.
  */
 
-exports.helloGET = function helloGET (req, res) {
-  res.send('Hello World!');
-};
-
 exports.rssGET2 = function rssGET2 (req, res) {
   const http = require("http");
   var url ='http://www.ttc.ca/RSS/Service_Alerts/index.rss';
@@ -32,5 +28,17 @@ exports.rssGET2 = function rssGET2 (req, res) {
     });
   });
   
+};
+
+exports.rssError2 = function rssError2 (req, res) {
+  res.set('Access-Control-Allow-Origin', "*")
+  res.set('Access-Control-Allow-Methods', 'GET')
+  res.status(400).send('No message defined!');
+};
+
+exports.noData2 = function noData2 (req, res) {
+  res.set('Access-Control-Allow-Origin', "*")
+  res.set('Access-Control-Allow-Methods', 'GET')
+  res.status(200).send('not rss!');
 };
 ```

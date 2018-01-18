@@ -80,6 +80,7 @@ class Alerts extends Component {
     super()
     this.state = {
       rssFeed: 'https://us-central1-rssproxy-192114.cloudfunctions.net/rssGET2',
+      fetchError: null,
       alerts: null,
       lastFetched: null,
       intervalId: null,
@@ -96,7 +97,8 @@ class Alerts extends Component {
     var intervalId = setInterval(this.timer, 60000); // 1 minute
     // store intervalId in the state so it can be accessed later:
     this.setState({intervalId: intervalId});
-    this.fetchRSS(this.state.rssFeed);
+    var fetchError = this.fetchRSS(this.state.rssFeed);
+    this.setState({fetchError: fetchError});
   }
 
   fetchRSS(url) {
@@ -105,7 +107,11 @@ class Alerts extends Component {
 
     parser.parseURL(this.state.rssFeed, function(err, parsed) {
       if (err) {
-        return;
+        return err;
+      }
+
+      if (parsed.feed.entries.count <= 0) {
+        return 'no data';
       }
 
       let alerts = []; 
@@ -130,10 +136,19 @@ class Alerts extends Component {
 
   update() {
     this.setState({alerts: null});
-    this.fetchRSS(this.state.rssFeed);
+    var fetchError = this.fetchRSS(this.state.rssFeed);
+    this.setState({fetchError: fetchError});
   }
 
   render() {
+    if (this.state.fetchError) {
+      return(
+        <div>
+          Error fetching data: { this.state.fetchError }
+        </div>
+      )
+    }
+
     if (this.state.alerts) {
       return(
         <CSSTransitionGroup
