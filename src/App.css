@@ -78,10 +78,17 @@ div.header-red {
   font-weight: normal;
 }
 
-
-
 #alerts div.description {
   font-size: 14pt;
+}
+
+.alert-appear {
+  opacity: 0.01;
+}
+
+.alert-appear.alert-appear-active {
+  opacity: 1;
+  transition: opacity .5s ease-in;
 }
 
 @keyframes App-logo-spin {

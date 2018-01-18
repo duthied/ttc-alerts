@@ -1,6 +1,7 @@
 'esversion 6'
 
 import React, { Component } from 'react';
+import { CSSTransitionGroup } from 'react-transition-group'
 import './App.css';
 import moment from 'moment';
 
@@ -156,28 +157,36 @@ class Alerts extends Component {
   render() {
     if (this.state.alerts) {
       return(
-        <div id='alerts'>
-          
-          <AlertHeader
-            alertCount={ this.state.alerts.length }
-            updatedAt={ this.state.timeSinceFetched }
-            handler={ this.update } />
+        <CSSTransitionGroup
+          transitionName="alert"
+          transitionAppear={true}
+          transitionAppearTimeout={500}
+          transitionEnter={false}
+          transitionLeave={false}>
 
-          <ul>
-            {this.state.alerts.map(function(a, i){
+          <div id='alerts'>
+            
+            <AlertHeader
+              alertCount={ this.state.alerts.length }
+              updatedAt={ this.state.timeSinceFetched }
+              handler={ this.update } />
 
-              return (
-                <AlertItem
-                  key={ i }
-                  itemContent={ a } />
-              )
-              
-            })}
-          </ul>
-          <div className='alert-footer'>
-            <a href="http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp">TTC Service Alerts Site</a>
+            <ul>
+              {this.state.alerts.map(function(a, i){
+
+                return (
+                  <AlertItem
+                    key={ i }
+                    itemContent={ a } />
+                )
+                
+              })}
+            </ul>
+            <div className='alert-footer'>
+              <a href="http://www.ttc.ca/Service_Advisories/all_service_alerts.jsp">TTC Service Alerts Site</a>
+            </div>
           </div>
-        </div>
+        </CSSTransitionGroup>
       )
     }
 
