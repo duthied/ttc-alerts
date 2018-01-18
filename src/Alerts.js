@@ -7,9 +7,9 @@ import moment from 'moment';
 
 function AlertHeader(props) {
   return (
-    <div className='alert-header' style={{'fontWeight': 'bold'}}>
+    <div className='alert-header'>
 
-      <button id='update' onClick={props.handler}>
+      <button className='btn' id='update' onClick={props.handler}>
           update
         </button>
 
@@ -96,28 +96,7 @@ class Alerts extends Component {
     var intervalId = setInterval(this.timer, 60000); // 1 minute
     // store intervalId in the state so it can be accessed later:
     this.setState({intervalId: intervalId});
-
     this.fetchRSS(this.state.rssFeed);
-
-    // var parser = require('rss-parser');
-    // let self = this;
-
-    // parser.parseURL(this.state.rssFeed, function(err, parsed) {
-    //   if (err) {
-    //     return;
-    //   }
-
-    //   let alerts = []; 
-    //   let count = 0;
-    //   parsed.feed.entries.forEach( function(alert) { 
-    //     alerts[count] = alert.date + ' - ' + alert.content;
-    //     count++;
-    //   });
-
-    //   self.setState({alerts: alerts});
-    //   self.setState({lastFetched: Date.now()});
-    //   self.setState({timeSinceFetched: moment(Date.now()).fromNow()});
-    // });
   }
 
   fetchRSS(url) {

@@ -2,26 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
 div#loading {
   margin:0 auto;
   padding-top: 150px;
@@ -30,7 +10,7 @@ div#loading {
 }
 
 .alert-header {
-  color: lightgray;
+  color: whitesmoke;
   padding: 5px 5px 5px 25px;
   background-color: #222;
 }
@@ -38,12 +18,19 @@ div#loading {
 div.updatedAt {
   float: right;
   font-size: 9pt;
-  font-style: italic;
+  /* font-style: italic; */
   margin: 10px 15px 10px 0;
 }
 
 #update {
-  margin: 10px 15px 10px 0;
+  margin: 8px 15px 10px 0;
+}
+
+.btn {
+  color: rgb(63, 46, 46);
+  border-radius: 4px;
+  /* text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); */
+  background: rgb(246, 248, 248);
 }
 
 .alert-footer {
